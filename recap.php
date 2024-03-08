@@ -19,8 +19,11 @@
 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     echo "<p>Aucun produit en session..</p>";
 }else{
-    echo "<table>",
-            "<thead>",
+    echo 
+    "<div class=' position-absolute top-50 start-50 translate-middle'",
+    "<h1 class='text-primary '>Votre Panier</h1>",
+        "<table class='w-50 p-3 table table-bordered border-primary'>",
+            "<thead class='p-3 mb-2 bg-primary border border-white text-white'>",
                 "<tr>",
                     "<th>#</th>",
                     "<th>Nom</th>",
@@ -42,12 +45,13 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
         $totalGeneral+= $product['total'];
     }
     echo "<tr>",
-            "<td colspan=4>Total général : </td>",
+            "<td colspan=4 class='p-3 mb-2 bg-primary border border-white text-white'>Total général : </td>",
             "<td><strong>".number_format($totalGeneral,2,",","&nbsp;")."&nbsp;€</strong></td>",
         "</tr>",       
     
     "</tbody>",
-    "</table>";
+    "</table>",
+    "</div>";
 }
 
 ?>

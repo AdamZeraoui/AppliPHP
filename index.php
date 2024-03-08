@@ -12,27 +12,31 @@
     <div class="position-absolute top-50 start-50 translate-middle text-center">
         <p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Ajouter le produit">
+                <button type="button" class="btn btn-primary position-relative">
+                 Panier <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2">+99 <span class="visually-hidden">unread messages</span></span>
+                </button>
         </p>
+
         <h1 class="text-primary">Ajouter un produit</h1>
         
         <form action="traitement.php" method="post">
             <!-- method="post" permet de définir comment les données seront envoyées -->
             <div class="mb-3">
                 <p>
-                    <label class="form-label">
+                    <label class="form-label text-sm-start">
                         Nom du produit :<br>
-                        <input class="form-control" id="formGroupExampleInput" type="text" name="name"> 
+                        <input class="form-control" id="formGroupExampleInput " type="text" name="name"> 
                     </label>
                 </p>
                 <p>
-                    <label>
+                    <label class="form-label text-sm-start">
                         Prix du produit en € :<br>
                         <input class="form-control" type="number" step="any" name="price">
                         <!-- step="any" permet indique que toute valeur est autorisée, et qu'il n'y a pas besoin d'incrémentation -->
                     </label>
                 </p>
                 <p>
-                    <label>
+                    <label class="form-label text-sm-start">
                         Quantité désirée : <br>
                         <input class="form-control" type="number" name="qtt" value="1">
                     </label>
