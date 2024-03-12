@@ -26,7 +26,9 @@
             }
                 break;
             case "delete":
-            case "clear" :
+            case "clear" : unset($_SESSION['products']);
+                header("location:recap.php");exit;
+                break;
             case "up qtt":
             case "down qtt":
         }
