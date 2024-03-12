@@ -2,7 +2,26 @@
 
     session_start();
 
+    if(isset($_SESSION['products'])){
+
+
+
+        function calculatAllQtt(){
+            $totalQtt = 0;
+            foreach($_SESSION['products'] as $product){
 
     
+                $totalQtt += $product['qtt'];
+    
+            }
+    
+            return $totalQtt;
+        }
 
-    header("location:index.php");
+
+
+
+    }
+echo calculatAllQtt();
+
+header("location:index.php");
