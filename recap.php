@@ -18,7 +18,8 @@
 
 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     echo $vide = '<div class="position-absolute top-50 start-50 translate-middle alert alert-success alert-dismissible fade show" role="alert" id="liveAlertPlaceholder"> Le panier est vide.
-    </div>';
+    </div>
+    <button type="button" class="position-absolute bottom-50 start-50  m-2 btn btn-primary text-primary"><a class="text-decoration-none text-white" href="index.php">Ajouter produit</a></button>';
 }else{
     echo 
     "<div class=' position-absolute top-50 start-50 translate-middle '>",
@@ -44,13 +45,13 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     foreach($_SESSION['products'] as $index=> $product){
         echo "<tr>",
                 "<td class='p-3 mb-2 text-center'><strong>". $index ."</td>",
-                "<td class='p-3 mb-2 text-center '><strong>". $product['name'] ."</td>",
+                "<td class='p-3 mb-2 text-center '><strong><a class='text-decoration-none text-black' href='traitement.php?action=delete&id=".$index."'>". $product['name'] ."</a></td>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
                 "<td class='p-3 mb-2 text-center'><strong>-</th>",
                 "<td class='p-3 mb-2 text-center'><strong>".$product['qtt'] ."</td>",
                 "<td class='p-3 mb-2 text-center'><strong>+</th>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
-                "<td class='p-3 mb-2 text-center'><strong><button type='button' class='btn-close' aria-label='Close'></button></th>",
+                "<td class='p-3 mb-2 text-center'><strong><a class='text-decoration-none' href='traitement.php?action=delete&id=".$index."'><button type='button' class='btn-close' aria-label='Close'></button></a></th>",
             "</tr>";
         $totalGeneral+= $product['total'];
         $totalQtt += $product['qtt'];

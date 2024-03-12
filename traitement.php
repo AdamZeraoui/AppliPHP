@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    $vide="<p>Aucun produit en session..</p>";
+
     if(isset($_GET['action'])){
 
         switch($_GET['action']){
@@ -26,6 +26,10 @@
             }
                 break;
             case "delete":
+                $index = $_GET['index'];
+                unset($_SESSION['products'][$index]);
+                header("location:recap.php");exit;
+                break;
             case "clear" : unset($_SESSION['products']);
                 header("location:recap.php");exit;
                 break;
