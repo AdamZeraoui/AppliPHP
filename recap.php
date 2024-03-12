@@ -44,13 +44,13 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     $totalGeneral = 0;
     foreach($_SESSION['products'] as $index=> $product){
 
-        if($product['total']<$product['qtt']*$product['price']){
+        if($product['total']!==$product['qtt']*$product['price']){
             $product['total']=$product['qtt']*$product['price'];
             echo "<tr>",
                 "<td class='p-3 mb-2 text-center'><strong>". $index ."</td>",
                 "<td class='p-3 mb-2 text-center '><strong><a class='text-decoration-none text-black' href='traitement.php?action=delete&id=".$index."'>". $product['name'] ."</a></td>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
-                "<td class='p-3 mb-2 text-center'><strong><i class='fa-regular fa-square-minus'></i></th>",
+                "<td class='p-3 mb-2 text-center'><strong><a class='text-decoration-none text-black' href='traitement.php?action=down-qtt&id=".$index."'><i class='fa-regular fa-square-minus'></i></a></th>",
                 "<td class='p-3 mb-2 text-center'><strong>".$product['qtt'] ."</td>",
                 "<td class='p-3 mb-2 text-center'><strong><a class='text-decoration-none text-black' href='traitement.php?action=up-qtt&id=".$index."'><i class='fa-regular fa-square-plus'></i></th>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
@@ -62,7 +62,7 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
                 "<td class='p-3 mb-2 text-center'><strong>". $index ."</td>",
                 "<td class='p-3 mb-2 text-center '><strong><a class='text-decoration-none text-black' href='traitement.php?action=delete&id=".$index."'>". $product['name'] ."</a></td>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
-                "<td class='p-3 mb-2 text-center'><strong><i class='fa-regular fa-square-minus'></i></th>",
+                "<td class='p-3 mb-2 text-center'><strong><a class='text-decoration-none text-black' href='traitement.php?action=down-qtt&id=".$index."'><i class='fa-regular fa-square-minus'></i></a></th>",
                 "<td class='p-3 mb-2 text-center'><strong>".$product['qtt'] ."</td>",
                 "<td class='p-3 mb-2 text-center'><strong><a class='text-decoration-none text-black' href='traitement.php?action=up-qtt&id=".$index."'><i class='fa-regular fa-square-plus'></i></th>",
                 "<td class='p-3 mb-2 text-center'><strong>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
