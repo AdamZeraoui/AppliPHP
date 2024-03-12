@@ -44,7 +44,7 @@
                     $_SESSION['products'][$index]['qtt']--;
                     header("location:recap.php");exit;
                     break;
-                }elseif($_SESSION['products'][$index]['qtt']=0) {
+                }else{
                     
                     unset($_SESSION['products'][$index]);
                     header("location:recap.php");exit;
