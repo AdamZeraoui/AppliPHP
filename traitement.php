@@ -26,7 +26,6 @@
 
         switch($_GET['action']){
             case "add":
-
             case "delete":
             case "clear" :
             case "up qtt":
