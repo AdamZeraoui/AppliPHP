@@ -26,15 +26,15 @@
             }
                 break;
             case "delete":
-                $index = $_GET['index'];
+                $index = $_GET['id'];
                 unset($_SESSION['products'][$index]);
                 header("location:recap.php");exit;
                 break;
             case "clear" : unset($_SESSION['products']);
                 header("location:recap.php");exit;
                 break;
-            case "up qtt":
-            case "down qtt":
+            case "up-qtt":
+            case "down-qtt":
         }
     }
 
