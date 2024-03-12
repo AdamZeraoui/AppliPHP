@@ -19,7 +19,7 @@
 
         <h1 class="text-primary">Ajouter un produit</h1>
         
-        <form action="traitement.php" method="post">
+        <form action="traitement.php?action=add" method="post">
             <!-- method="post" permet de définir comment les données seront envoyées -->
             <div class="mb-3">
                 <p>
