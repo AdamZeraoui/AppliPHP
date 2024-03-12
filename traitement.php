@@ -22,4 +22,16 @@
 
     }
 
+    if(isset($_GET['action'])){
+
+        switch($_GET['action']){
+            case "add":
+
+            case "delete":
+            case "clear" :
+            case "up qtt":
+            case "down qtt":
+        }
+    }
+
     header("location:index.php");

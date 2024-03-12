@@ -20,33 +20,41 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     echo "<p>Aucun produit en session..</p>";
 }else{
     echo 
-    "<div class=' position-absolute top-50 start-50 translate-middle'",
-    "<h1 class='text-primary '>Votre Panier</h1>",
-        "<table class='w-50 p-3 table table-bordered border-primary'>",
-            "<thead class='p-3 mb-2 bg-primary border border-white text-white'>",
+    "<div class=' position-absolute top-50 start-50 translate-middle '>",
+    "<h1 class='text-primary text-center'>Votre Panier</h1>",
+    "<div class='text-center'>",
+    "<button type='button' class='m-2 btn text-primary '><a href='traitement.php?action=add'>Ajouter produit</a></button><button type='button' class='m-2 btn text-primary position-relative'>Pannier<span class=' badge rounded-pill bg-secondary  border border-light rounded-circle bg-danger p-2'>+99 <span class='visually-hidden'>unread messages</span></span></button> <button type='button' class='m-2 btn btn-link'>Supprimer panier</button></div>",
+        "<table class='w-50 p-3 mt-5 table table-bordered border-primary'>",
+            "<thead class='text-center p-3 mb-2 bg-primary border border-white text-white'>",
                 "<tr>",
-                    "<th>#</th>",
-                    "<th>Nom</th>",
-                    "<th>Prix</th>",
-                    "<th>Quantité</th>",
-                    "<th>Total</th>",
+                    "<th class='p-3 mb-2'>#</th>",
+                    "<th class='p-3 mb-2'>Nom</th>",
+                    "<th class='p-3 mb-2'>Prix</th>",
+                    "<th class='p-3 mb-2'>-</th>",
+                    "<th class='p-3 mb-2'>Quantité</th>",
+                    "<th class='p-3 mb-2'>+</th>",
+                    "<th class='p-3 mb-2'>Total</th>",
+                    "<th class='p-3 mb-2'>Supp</th>",
                 "</tr>",
             "</thead>",
             "<tbody>";
     $totalGeneral = 0;
     foreach($_SESSION['products'] as $index=> $product){
         echo "<tr>",
-                "<td>". $index ."</td>",
-                "<td>". $product['name'] ."</td>",
-                "<td>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
-                "<td>".$product['qtt'] ."</td>",
-                "<td>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
+                "<td class='p-3 mb-2 text-center'><strong>". $index ."</td>",
+                "<td class='p-3 mb-2 text-center '><strong>". $product['name'] ."</td>",
+                "<td class='p-3 mb-2 text-center'><strong>".number_format($product['price'],2,",","&nbsp;")."&nbsp;€</td>",
+                "<td class='p-3 mb-2 text-center'><strong>-</th>",
+                "<td class='p-3 mb-2 text-center'><strong>".$product['qtt'] ."</td>",
+                "<td class='p-3 mb-2 text-center'><strong>+</th>",
+                "<td class='p-3 mb-2 text-center'><strong>".number_format($product['total'],2,",","&nbsp;")."&nbsp;€</td>",
+                "<td class='p-3 mb-2 text-center'><strong><button type='button' class='btn-close' aria-label='Close'></button></th>",
             "</tr>";
         $totalGeneral+= $product['total'];
     }
     echo "<tr>",
-            "<td colspan=4 class='p-3 mb-2 bg-primary border border-white text-white'>Total général : </td>",
-            "<td><strong>".number_format($totalGeneral,2,",","&nbsp;")."&nbsp;€</strong></td>",
+            "<td colspan=6 class='text-center p-3 mb-2 bg-primary border border-white text-white'><strong>Total général : </td>",
+            "<td colspan=2 class=' text-center p-3 mb-2 bg-success text-white'><strong>".number_format($totalGeneral,2,",","&nbsp;")."&nbsp;€</strong></td>",
         "</tr>",       
     
     "</tbody>",
