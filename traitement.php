@@ -35,12 +35,7 @@
                 break;
             case "up-qtt":
                 $index=$_GET['id'];
-                $newQtt= $_SESSION['products'][$index]['qtt']++;
-                $newQtt;
-                $price=$_SESSION['products'][$index]['price'];
-                $newTotal = $price*$newQtt;
-                unset($_SESSION['products'][$index]['total']);
-                $_SESSION['products'][$index]['"total"=>'.$newTotal];
+                $_SESSION['products'][$index]['qtt']++;
                 header("location:recap.php");exit;
                 break;
             case "down-qtt":
