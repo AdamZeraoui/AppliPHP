@@ -39,7 +39,7 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
             "</thead>",
             "<tbody>";
     $totalGeneral = 0;
-    $totalQTT= 0;
+    $totalQtt= 0;
     foreach($_SESSION['products'] as $index=> $product){
         echo "<tr>",
                 "<td class='p-3 mb-2 text-center'><strong>". $index ."</td>",
