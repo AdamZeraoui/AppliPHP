@@ -40,7 +40,7 @@
                 break;
             case "down-qtt":
                 $index=$_GET['id'];
-                if($_SESSION['products'][$index]['qtt']>0){
+                if($_SESSION['products'][$index]['qtt']>1){
                     $_SESSION['products'][$index]['qtt']--;
                     header("location:recap.php");exit;
                     break;
