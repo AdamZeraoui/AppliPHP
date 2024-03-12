@@ -12,8 +12,8 @@
     <div class="position-absolute top-50 start-50 translate-middle text-center">
         <p>
                 <input class="btn btn-primary" type="submit" name="submit" value="Ajouter le produit">
-                <button type="button" class="btn btn-primary position-relative">
-                 Panier <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2">+99 <span class="visually-hidden">unread messages</span></span>
+                <button type="button" class="btn btn-primary position-relative"><a class="text-decoration-none link-light" href="recap.php">
+                 Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2">+99 <span class="visually-hidden">unread messages</span></span>
                 </button>
         </p>
 
