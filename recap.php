@@ -17,7 +17,8 @@
 
 
 if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-    echo "<p>Aucun produit en session..</p>";
+    echo $vide = '<div class="position-absolute top-50 start-50 translate-middle alert alert-success alert-dismissible fade show" role="alert" id="liveAlertPlaceholder"> Le panier est vide.
+    </div>';
 }else{
     echo 
     "<div class=' position-absolute top-50 start-50 translate-middle '>",

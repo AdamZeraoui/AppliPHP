@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-
+    $vide="<p>Aucun produit en session..</p>";
     if(isset($_GET['action'])){
 
         switch($_GET['action']){
