@@ -1,3 +1,5 @@
+<?php require_once "index.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +14,8 @@
 <body>
     <div id="wrapper">
 
-        <?php $content;
-        var_dump($content);?>
+        <?php echo $content;
+        // var_dump($content);?>
         
     </div>
 </body>
