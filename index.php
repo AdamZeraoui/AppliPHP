@@ -16,7 +16,6 @@
         <form action="traitement.php?action=add" method="post">
             <!-- method="post" permet de définir comment les données seront envoyées -->
             <p>
-                <input class="btn btn-primary" type="submit" name="submit" value="Ajouter le produit">
                 <button type="button" class="btn btn-primary position-relative"><a class="text-decoration-none link-light" href="recap.php">
                  Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2">+99 <span class="visually-hidden">unread messages</span></span>
                 </button>
@@ -53,7 +52,7 @@
     </div>
 
     <?php
-
-    $content = ob_end_clean();
+    $title = "Ajouter un produit";
+    $content = ob_get_clean();
     require_once "template.php";
 ?>
