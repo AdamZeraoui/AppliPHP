@@ -1,6 +1,7 @@
 
 <?php
     session_start();
+    $title = "index";
     ob_start();
 ?>
 

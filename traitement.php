@@ -30,20 +30,24 @@
                 unset($_SESSION['products'][$index]);
                 header("location:recap.php");exit;
                 break;
+                
             case "clear" : unset($_SESSION['products']);
                 header("location:recap.php");exit;
                 break;
+
             case "up-qtt":
                 $index=$_GET['id'];
                 $_SESSION['products'][$index]['qtt']++;
                 header("location:recap.php");exit;
                 break;
+
             case "down-qtt":
                 $index=$_GET['id'];
                 if($_SESSION['products'][$index]['qtt']>1){
                     $_SESSION['products'][$index]['qtt']--;
                     header("location:recap.php");exit;
                     break;
+                    
                 }else{
                     
                     unset($_SESSION['products'][$index]);
