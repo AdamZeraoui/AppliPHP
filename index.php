@@ -54,6 +54,6 @@
 
     <?php
 
-    $content = ob_get_clean();
+    $content = ob_end_clean();
     require_once "template.php";
 ?>

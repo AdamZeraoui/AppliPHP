@@ -67,7 +67,7 @@ if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
     "</div>";
 }
 
-$contentRecap = ob_get_clean();
+$contentRecap = ob_end_clean();
 require_once "template.php";
 
 ?>

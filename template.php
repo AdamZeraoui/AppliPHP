@@ -8,9 +8,9 @@ require_once "recap.php";?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php
                 if(isset($title) && $title === "index") {
-                    echo "Votre Panier";
-                } elseif(isset($title) && $title === "recap") {
                     echo "Ajout de produit";
+                } elseif(isset($title) && $title === "recap") {
+                    echo "Votre Panier";
                 } else {
                     echo "Titre par défaut";
                 }
@@ -28,7 +28,7 @@ require_once "recap.php";?>
                 } elseif(isset($title) && $title === "recap") {
                     echo $contentRecap;
                 } else {
-                    echo "Titre par défaut";
+                    echo $content;
                 }
         
         ?>
