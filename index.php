@@ -1,8 +1,8 @@
 
 <?php
     session_start();
-    $title = "index";
     ob_start();
+
 ?>
 
 
@@ -17,7 +17,7 @@
             <!-- method="post" permet de définir comment les données seront envoyées -->
             <p>
                 <button type="button" class="btn btn-primary position-relative"><a class="text-decoration-none link-light" href="recap.php">
-                 Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2">+99 <span class="visually-hidden">unread messages</span></span>
+                 Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2"><?php echo calculatAllQtt()?> <span class="visually-hidden">unread messages</span></span>
                 </button>
         </p>
             <div class="mb-3">
@@ -43,9 +43,9 @@
                 <p>
                     <input class="btn btn-primary" id="liveAlertBtn" type="submit" name="submit" value="Ajouter le produit">
 
-                    <div class="alert alert-success alert-dismissible fade show" role="alert" id="liveAlertPlaceholder"> Produit ajouter au panier avec succée.  
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    
+                    <?=$stat?>
+                    
                 </p>
             </div>
         </form>
@@ -55,4 +55,5 @@
     $title = "Ajouter un produit";
     $content = ob_get_clean();
     require_once "template.php";
+
 ?>

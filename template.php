@@ -14,7 +14,7 @@
 
         <?=$content
         ?>
-        
+
     </div>
 </body>
 </html> 
