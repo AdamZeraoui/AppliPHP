@@ -2,8 +2,12 @@
     session_start();
     ob_start();
     $totalQtt = 0;
-    foreach($_SESSION['products'] as $index=>$product){
-    $totalQtt+= $product['qtt'];
+    if(isset($_SESSION['products'])){
+        foreach($_SESSION['products'] as $index=>$product){
+        $totalQtt+= $product['qtt'];
+        }
+    }else {
+        $totalQtt = "Vide";
     }
 ?>
     

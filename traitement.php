@@ -21,13 +21,14 @@
                     ];
         
                     $_SESSION['products'][] = $product;
-                    $stat='<div class="alert alert-success alert-dismissible fade show" role="alert" id="liveAlertPlaceholder"> Produit ajouter au panier avec succée.  
+                    $_SESSION['alert']='<div class="alert alert-success alert-dismissible fade show" role="alert" id="liveAlertPlaceholder"> Produit ajouter au panier avec succée.  
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';
-                }   $stat='<div class="alert alert-danger" role="alert">
+                    
+                } else { $_SESSION['alert']='<div class="alert alert-danger" role="alert">
                 Produit na pas été ajouter. Vérifier les informations fourni.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>';
+                </div>';}
         
             }
                 break;

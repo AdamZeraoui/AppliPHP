@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,10 @@
 <body>
     <div id="wrapper">
 
-        <?=$content
+        <?=$content;
+
+        echo $_SESSION['alert'];
+
         ?>
 
     </div>
