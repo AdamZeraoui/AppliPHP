@@ -1,13 +1,12 @@
-
 <?php
     session_start();
     ob_start();
-
+    $totalQtt = 0;
+    foreach($_SESSION['products'] as $index=>$product){
+    $totalQtt+= $product['qtt'];
+    }
 ?>
-
-
-
-
+    
 
         <div class="position-absolute top-50 start-50 translate-middle text-center">
         
@@ -17,7 +16,7 @@
             <!-- method="post" permet de définir comment les données seront envoyées -->
             <p>
                 <button type="button" class="btn btn-primary position-relative"><a class="text-decoration-none link-light" href="recap.php">
-                 Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2"><?php echo calculatAllQtt()?> <span class="visually-hidden">unread messages</span></span>
+                 Panier</a><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary border border-light rounded-circle bg-danger p-2"><?=$totalQtt?><span class="visually-hidden">unread messages</span></span>
                 </button>
         </p>
             <div class="mb-3">
@@ -43,8 +42,6 @@
                 <p>
                     <input class="btn btn-primary" id="liveAlertBtn" type="submit" name="submit" value="Ajouter le produit">
 
-                    
-                    <?=$stat?>
                     
                 </p>
             </div>

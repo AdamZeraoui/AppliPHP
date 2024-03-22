@@ -18,10 +18,14 @@
             echo $totalQtt;
         }
 
-
-
-        echo calculatAllQtt();
+        
     }
 
 
+    if(isset($_GET['testQTT'])){
+       $tQTT = calculatAllQtt();
+
+    }
+
+;
 // header("location:index.php");
